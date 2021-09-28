@@ -5,3 +5,11 @@
 .futureDateCard {
 background-color: darkblue;
 }
+
+#five-day-forecast-row {
+  flex-wrap: nowrap;
+}
+
+.card-body {
+  padding: 15px;
+}
