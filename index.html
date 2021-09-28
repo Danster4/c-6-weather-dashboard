@@ -16,40 +16,117 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <h1 id="header">Weather Dashboard</h1>
+      <div class="col-12 text-center bg-primary bg-gradient mb-3">
+        <h1 class ="text-light" id="header">Weather Dashboard</h1>
       </div>
     </div>
 
     <div class="row">
       <div class="col-4">
-        sfsdfsd
-      </div>
-
-      <div class="col-8">
-        <div class="row">
-          Atlanta
+        
+          <h2 class="fw-bold">Search for a City:</h2>
+        
+      
+        
+          <!-- <label for="citySearchTextarea" class="form-label"></label> -->
+          <textarea class="form-control" id="citySearchTextarea" rows="3" placeholder="i.e. Chicago"></textarea>
+        
+      
+        
+        <div class="mt-2 justify-content-center" id="search-btn-div">
+          <button class="mb-3 btn btn-primary w-100" id="search-btn" type="button" value="Input">Search</button>
+        </div>
+        
+        <div class="mt-3 w-100 list-group">
+          <a href="#" class="list-group-item list-group-item-action w-100 text-center bg-secondary text-light" aria-current="true">
+            Tampa
+          </a>
+          <a href="#" class="list-group-item list-group-item-action w-100 text-center bg-secondary text-light">Miami</a>
+          <a href="#" class="list-group-item list-group-item-action w-100 text-center bg-secondary text-light">San Francisco</a>
+          <a href="#" class="list-group-item list-group-item-action w-100 text-center bg-secondary text-light">Seattle</a>
         </div>
 
-        <div class="row">
-          <div class="row">
-            5-Day Forecast:
-          </div>
-          
-          <div class="row">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
+      </div>
+
+      
+      
+      <div class="col-8">
+        
+          <div class="w-100 card text-left border-secondary mb-3" id="currentDayCard" style="width: 18rem;">
+            <div class="card-body">
+              
+                <h5 class="card-title text-left city date fw-bold">Atlanta (3/30/2021)</h5>
+                <img src="..." class="card-img-top" alt="...">
+              
+              <p class="card-text text-left tempCardInfo">Temp: </p>
+              <p class="card-text text-left windCardInfo">Wind: </p>
+              <p class="card-text text-left humidityCardInfo">Humidity: </p>
             </div>
           </div>
         
+
+        
+          
+        
+          <h3>5-Day Forecast:</h3>
+        
+        
+        <div class="row">
+  
+          <div class="w-auto mx-auto text-left card border-primary futureDateCard" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title text-light text-left date" >Card title</h5>
+              <img src="..." class="card-img-top" alt="...">
+              <p class="card-text text-light text-left tempCardInfo">Temp: </p>
+              <p class="card-text text-light text-left windCardInfo">Wind: </p>
+              <p class="card-text text-light text-left humidityCardInfo">Humidity: </p>
+            </div>
           </div>
-     
+          
+          <div class="w-auto mx-auto text-left card border-primary futureDateCard" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title text-light text-left date">Card title</h5>
+              <img src="..." class="card-img-top" alt="...">
+              <p class="card-text text-light text-left tempCardInfo">Temp: </p>
+              <p class="card-text text-light text-left windCardInfo">Wind: </p>
+              <p class="card-text text-light text-left humidityCardInfo">Humidity: </p>
+            </div>
+          </div>
+          
+          <div class="w-auto mx-auto text-left card border-primary futureDateCard" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title text-light date">Card title</h5>
+              <img src="..." class="card-img-top" alt="...">
+              <p class="card-text text-light text-left tempCardInfo">Temp: </p>
+              <p class="card-text text-light text-left windCardInfo">Wind: </p>
+              <p class="card-text text-light text-left humidityCardInfo">Humidity: </p>
+            </div>
+          </div>
+          
+          <div class="w-auto mx-auto text-left card border-primary futureDateCard" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title text-light date">Card title</h5>
+              <img src="..." class="card-img-top" alt="...">
+              <p class="card-text text-light text-left tempCardInfo">Temp: </p>
+              <p class="card-text text-light text-left windCardInfo">Wind: </p>
+              <p class="card-text text-light text-left humidityCardInfo">Humidity: </p>
+            </div>
+          </div>
+          
+          <div class="w-auto mx-auto text-left card border-primary futureDateCard" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title text-light date">Card title</h5>
+              <img src="..." class="card-img-top" alt="...">
+              <p class="card-text text-light text-left tempCardInfo">Temp: </p>
+              <p class="card-text text-light text-left windCardInfo">Wind: </p>
+              <p class="card-text text-light text-left humidityCardInfo">Humidity: </p>
+            </div>
+          </div>
+        </div>
       </div>
+     
+      
+
     </div>
   </div>
 
