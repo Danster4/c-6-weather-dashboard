@@ -41,13 +41,30 @@ $(document).ready(function () {
     // append button to top of button container
     pastCityButtonContainer.appendChild(pastCityButton);
 
-    var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?"
+    var citySearched = localStorage.getItem('citySearched')
+
+    var apiGeocodingUrl = "http://api.positionstack.com/v1/forward"
+    + "?access_key=79f786209631db66ea5de261efa0251e"
+    + "&query=" + citySearched;
+
+    fetch(apiGeocodingUrl)
+    // Convert the response to JSON
+    .then(function(data) {
+      return data.json();
+    })
+    .then(function(data) {
+    
+      console.log(data)
+      console.log(data[0].latitude)
+    })
+
+    var apiWeatherUrl = "https://api.openweathermap.org/data/2.5/onecall?"
     + "lat=" + "33.44" 
     + "&lon=" + "-94.04"
     + "&units=imperial"
     + "&appid=be11e447ae5251b09dd8f2087ffbf394";
     
-    fetch(apiUrl)
+    fetch(apiWeatherUrl)
       // Convert the response to JSON
       .then(function(response) {
         return response.json();
@@ -96,7 +113,7 @@ $(document).ready(function () {
 
 
 
-
+        // possibly change code below to be a for loop i < 5
 
         
         // make 5-Day Forecast Cards
@@ -254,6 +271,5 @@ $(document).ready(function () {
       });
 
     
-  })
 });
-
+})
