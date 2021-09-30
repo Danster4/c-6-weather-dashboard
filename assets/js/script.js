@@ -14,11 +14,15 @@ var plus3DaysCard = document.querySelector("#plus3DaysCard")
 var plus4DaysCard = document.querySelector("#plus4DaysCard")
 var plus5DaysCard = document.querySelector("#plus5DaysCard")
 
+var citiesArray = sessionStorage.getItem('citySearched') || [];
 
 var reset = function() {
 
 }
 
+// $(document).ready(function () {
+//   sessionStorage.clear()
+// });
 
 
 $(document).ready(function () {
@@ -28,20 +32,29 @@ $(document).ready(function () {
     // val() and trim() methods are used to get the values from
     // textarea and stored in ""Text variable
     var searchText = $("#citySearchTextarea").val().trim();
-    // set the key/value pair in localStorage
-    localStorage.setItem('citySearched', searchText);
+
+    
+
+    citiesArray.push(searchText)
+
+    // set the key/value pair in sessionStorage
+    sessionStorage.setItem('citySearched', citiesArray);
 
     // create button below with name of city you just searched
+
     var pastCityButton = document.createElement("a")
     pastCityButton.setAttribute("class", "list-group-item list-group-item-action w-100 text-center bg-secondary text-light")
     pastCityButton.setAttribute("id", "citySearched[1]")
     pastCityButton.setAttribute("href", "#");
-    pastCityButton.textContent = localStorage.getItem('citySearched')
+    for (var i = 0; i < citiesArray.length; i++) {
+      pastCityButton.textContent = citiesArray[i]
+      
+      // append button to top of button container
+      pastCityButtonContainer.appendChild(pastCityButton);
+    }
     
-    // append button to top of button container
-    pastCityButtonContainer.appendChild(pastCityButton);
 
-    var citySearched = localStorage.getItem('citySearched')
+    var citySearched = sessionStorage.getItem('citySearched')
 
     var apiGeocodingUrl = "https://api.opencagedata.com/geocode/v1/json?"
     + "q=" + citySearched
@@ -75,15 +88,19 @@ $(document).ready(function () {
             .then(function(data) {
               console.log(data)
               console.log(data.daily[1].temp.day)
+              
+              $(".col-8").removeClass("hide")
+              
+              $(".card-body").html("")
 
-              $("#citySearchTextarea").val(" ")
+              $("#citySearchTextarea").val("")
 
 
               // create h5 City Name for Current Day Box
               var cityNameEl = document.createElement('h5');
               cityNameEl.setAttribute("class", "card-title text-left city date fw-bold");
               cityNameEl.setAttribute("id", "cityName");
-              cityNameEl.textContent = localStorage.getItem('citySearched') + " (" + currentDate + ")";
+              cityNameEl.textContent = searchText + " (" + currentDate + ")";
               currentDayCardBody.appendChild(cityNameEl);
 
               // create p Temp for Current Day Box
