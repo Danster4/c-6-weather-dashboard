@@ -30,4 +30,4 @@ GIVEN a weather dashboard with form inputs
 
 
 ## Screenshot:
-<insert here>
+[![c-6-weather-dashboard-screenshot.png](https://i.postimg.cc/hjTrBHdV/c-6-weather-dashboard-screenshot.png)](https://postimg.cc/KkcL7pQY)
