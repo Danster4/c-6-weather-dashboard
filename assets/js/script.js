@@ -46,6 +46,7 @@ $(document).ready(function () {
     pastCityButton.setAttribute("class", "list-group-item list-group-item-action w-100 text-center bg-secondary text-light")
     pastCityButton.setAttribute("id", "citySearched[1]")
     pastCityButton.setAttribute("href", "#");
+    
     for (var i = 0; i < citiesArray.length; i++) {
       pastCityButton.textContent = citiesArray[i]
       
@@ -103,6 +104,14 @@ $(document).ready(function () {
               cityNameEl.textContent = searchText + " (" + currentDate + ")";
               currentDayCardBody.appendChild(cityNameEl);
 
+              // create image icon for Current Day Box
+              var iconEl = document.createElement('img')
+              iconEl.setAttribute('id', 'icon')
+              var iconCode = data.current.weather[0].icon
+              iconEl.src = "http://openweathermap.org/img/w/" + iconCode + ".png";
+              currentDayCardBody.appendChild(iconEl);
+
+
               // create p Temp for Current Day Box
               var cityTempTodayEl = document.createElement('p');
               cityTempTodayEl.setAttribute("class", "card-text text-left tempCardInfo");
@@ -143,6 +152,12 @@ $(document).ready(function () {
               datePlus1.setAttribute("class", "card-title text-light text-left date");
               datePlus1.innerHTML = plus1DayDate;
               plus1DayCard.appendChild(datePlus1);
+
+              // create image icon for Day +1 Card
+              var iconPlus1DayEl = document.createElement('img')
+              var iconPlus1DayCode = data.daily[1].weather[0].icon
+              iconPlus1DayEl.src = "http://openweathermap.org/img/w/" + iconPlus1DayCode + ".png";
+              plus1DayCard.appendChild(iconPlus1DayEl);
               
               // create p Temp for Day +1 Card
               var datePlus1Temp = document.createElement('p');
@@ -174,6 +189,12 @@ $(document).ready(function () {
               datePlus2.setAttribute("class", "card-title text-light text-left date");
               datePlus2.innerHTML = plus2DaysDate;
               plus2DaysCard.appendChild(datePlus2);
+
+              // create image icon for Day +2 Card
+              var iconPlus2DaysEl = document.createElement('img')
+              var iconPlus2DaysCode = data.daily[2].weather[0].icon
+              iconPlus2DaysEl.src = "http://openweathermap.org/img/w/" + iconPlus2DaysCode + ".png";
+              plus2DaysCard.appendChild(iconPlus2DaysEl);
               
               // create p Temp for Day +2 Card
               var datePlus2Temp = document.createElement('p');
@@ -204,6 +225,12 @@ $(document).ready(function () {
               datePlus3.setAttribute("class", "card-title text-light text-left date");
               datePlus3.innerHTML = plus3DaysDate;
               plus3DaysCard.appendChild(datePlus3);
+
+              // create image icon for Day +3 Card
+              var iconPlus3DaysEl = document.createElement('img')
+              var iconPlus3DaysCode = data.daily[3].weather[0].icon
+              iconPlus3DaysEl.src = "http://openweathermap.org/img/w/" + iconPlus3DaysCode + ".png";
+              plus3DaysCard.appendChild(iconPlus3DaysEl);
               
               // create p Temp for Day +3 Card
               var datePlus3Temp = document.createElement('p');
@@ -235,6 +262,12 @@ $(document).ready(function () {
               datePlus4.setAttribute("class", "card-title text-light text-left date");
               datePlus4.innerHTML = plus4DaysDate;
               plus4DaysCard.appendChild(datePlus4);
+
+              // create image icon for Day +4 Card
+              var iconPlus4DaysEl = document.createElement('img')
+              var iconPlus4DaysCode = data.daily[4].weather[0].icon
+              iconPlus4DaysEl.src = "http://openweathermap.org/img/w/" + iconPlus4DaysCode + ".png";
+              plus4DaysCard.appendChild(iconPlus4DaysEl);
               
               // create p Temp for Day +4 Card
               var datePlus4Temp = document.createElement('p');
@@ -266,6 +299,12 @@ $(document).ready(function () {
               datePlus5.setAttribute("class", "card-title text-light text-left date");
               datePlus5.innerHTML = plus5DaysDate;
               plus5DaysCard.appendChild(datePlus5);
+
+              // create image icon for Day +5 Card
+              var iconPlus5DaysEl = document.createElement('img')
+              var iconPlus5DaysCode = data.daily[5].weather[0].icon
+              iconPlus5DaysEl.src = "http://openweathermap.org/img/w/" + iconPlus5DaysCode + ".png";
+              plus5DaysCard.appendChild(iconPlus5DaysEl);
               
               // create p Temp for Day +5 Card
               var datePlus5Temp = document.createElement('p');
